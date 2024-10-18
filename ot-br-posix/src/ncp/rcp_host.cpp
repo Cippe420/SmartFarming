@@ -378,9 +378,8 @@ void RcpHost::StartCoapServer()
     coapResource.mHandler = coap_handle_request;
     coapResource.mContext = mInstance;
     coapResource.mNext = NULL;
-
-    // Aggiungi la risorsa al server
-    otCoapAddResource(mInstance, &coapResource);
+    
+    otCoapSecureAddResource(mInstance, &coapResource);
     
 }
 
